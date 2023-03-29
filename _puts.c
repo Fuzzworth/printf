@@ -17,7 +17,6 @@ int _puts(char *string)
 	if (string == 0)
 	{
 		string = "(null)";
-		return (6);
 	}
 
 	for (string_position = 0; string[string_position] != '\0'; string_position++)
