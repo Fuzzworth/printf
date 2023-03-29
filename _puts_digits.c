@@ -12,6 +12,7 @@
 int _puts_digit(int num)
 {
 	int number_of_digits_printed, sign, index;
+	unsigned int num2;
 	char num_rev_string[15];
 
 	number_of_digits_printed = sign = 0;
@@ -19,20 +20,22 @@ int _puts_digit(int num)
 	if (num < 0)
 	{
 		sign = 1;
-		num = -(num);
+		num2 = -(num);
 	}
+	else
+		num2 = num;
 
 	while (1)
 	{
-		if ((num / 10) > 0)
+		if ((num2 / 10) > 0)
 		{
-			num_rev_string[number_of_digits_printed] = ((num % 10) + '0');
+			num_rev_string[number_of_digits_printed] = ((num2 % 10) + '0');
 			number_of_digits_printed++;
-			num /= 10;
+			num2 /= 10;
 		}
-		else if ((num / 10) < 10)
+		else if ((num2 / 10) < 10)
 		{
-			num_rev_string[number_of_digits_printed] = ((num % 10) + '0');
+			num_rev_string[number_of_digits_printed] = ((num2 % 10) + '0');
 			number_of_digits_printed++;
 			if (sign)
 			{
