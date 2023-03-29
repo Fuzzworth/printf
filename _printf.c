@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 
 	if (format == 0)
 		return (-1);
+	else if (format[0] == '%' && format[1] == '\0')
+		return (-1);
 	va_start(all_parameters, format);
 	format_position = number_of_characters_printed = 0;
 	while (format[format_position] != '\0')
